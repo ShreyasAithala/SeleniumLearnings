@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Google Demo TestNG RUN">
+	<test name="Google testngTest">
+		<classes>
+			<class name="org.sel.test.GoogleTest" />
+			<class name="org.sel.test.InvocationCount" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,56 @@
+TestNG -- Its a unit testing framework.
+Also called as TDD - Test Driven Development
+Purpose : To design test cases in a systematic way.
+Its open source and free and available inform of jar files.
+Only for Java unit testing framework.
+-------------------------------------------------------------------------------------------------------------------------------------
+Advantages :
+Designing test case in a systematic way
+For generating Html reports 
+Annotations Eg. Priority / Sequence
+Dependency feature
+Grouping 
+Data Provider : For executing your test case multiple times with different set of data.
+----------------------------------------------------------------------------------------------------------------------------------------- 
+Installation : http://beust.com/eclipse 
+Refer this link for Installation for testNG plugin 
+https://www.toolsqa.com/selenium-webdriver/install-testng/
+
+Add testNG jar to your project from java build path 
+Select it from add library and choose TestNG
+--------------------------------------------------------------------------------------------------------------------------------------------
+Sequence of Preference for TestNG Annotations :
+
+@BeforeSuite 	I	Eg: Setup System Property For Chrome
+@BeforeTest 	II	Eg: Launch Browser
+@BeforeClass 	III Eg: Login to App
+@BeforeMethod		Eg:	Enter URL
+@Test				Eg: Google Title Test
+@AfterMethod		Eg: Logout from the App
+
+@AfterClass			Eg: Close Browser
+
+priority keyword in testNG is used to define the priority of the tests to be executed or to run the test cases in sequential manner.
+Eg: @Test(priority=1)
+
+groups keyword in testNG is used to group the tests 
+Eg: @Test(priority=1,groups"search")
+
+dependsOnMethods attribute on a test method [test1 e.g.] specifies all the test methods [test2, test3,..] this test method depends on. It means test1 will start execution only after all the tests it depends on executed successfully. If any of the tests specified via dependsOnMethods attribute failed, then test1 will be skipped.
+Eg: @Test(depedsOnMethods="loginTest");
+
+InvocationCount attribute is used to repeat the same test case again
+Eg: @Test(priority = 2, groups = "title",invocationCount=3)
+
+InvocationTimeout : Used to terminate the running test after the specified time.
+Eg: @Test(priority = 2,invocationTimeOut=3)
+
+ExpectedException: Used to run the test eventhough the exception occurs.
+@Test(expectedExceptions=NoSuchElementException.class)
+
+assertEquals(expected,actual) : Used to check the condition is equal
+assertTrue(boolean)			  : Used to check whether the given condition is true or false
+------------------------------------------------------------------------------------------------------------------
+Creation of XML template : [Test Suite]
+1- For running all your test class files together 
+2- In your src right click - New - on other - file - next and give filename as testNG.xml file  
